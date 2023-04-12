@@ -98,7 +98,7 @@ def bdshop():
   soup = BeautifulSoup(web, "lxml")
 
   names = soup.find_all("h2", class_ ="product name product-item-name")
-  prices = soup.find_all("span",class_ ="price")
+  prices = soup.find_all("span", {"data-price-type": "finalPrice"})
   images = soup.find_all("span", class_="main-photo")
   urls = soup.find_all("a", class_="product-item-link")
 
